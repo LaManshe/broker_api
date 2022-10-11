@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "borker_api", "borker_api\borker_api.csproj", "{6E656409-B3E3-47BB-A1F9-22E8073F04D7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "borker_api.ApiInteraction", "borker_api.ApiInteraction\borker_api.ApiInteraction.csproj", "{486B67B9-4317-426C-9151-3D87CA877354}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "borker_api.DAL", "borker_api.DAL\borker_api.DAL.csproj", "{37C81CEA-2881-4F09-A63D-174D02C69E93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "borker_api.Interfaces", "borker_api.Interfaces\borker_api.Interfaces.csproj", "{AA8C720C-E7CF-4BA5-82BE-2A5E764F740F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6E656409-B3E3-47BB-A1F9-22E8073F04D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E656409-B3E3-47BB-A1F9-22E8073F04D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E656409-B3E3-47BB-A1F9-22E8073F04D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E656409-B3E3-47BB-A1F9-22E8073F04D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{486B67B9-4317-426C-9151-3D87CA877354}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{486B67B9-4317-426C-9151-3D87CA877354}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{486B67B9-4317-426C-9151-3D87CA877354}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{486B67B9-4317-426C-9151-3D87CA877354}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37C81CEA-2881-4F09-A63D-174D02C69E93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37C81CEA-2881-4F09-A63D-174D02C69E93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37C81CEA-2881-4F09-A63D-174D02C69E93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37C81CEA-2881-4F09-A63D-174D02C69E93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA8C720C-E7CF-4BA5-82BE-2A5E764F740F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA8C720C-E7CF-4BA5-82BE-2A5E764F740F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA8C720C-E7CF-4BA5-82BE-2A5E764F740F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA8C720C-E7CF-4BA5-82BE-2A5E764F740F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3D5B8645-AD5A-424C-843B-0211A656CECA}
+	EndGlobalSection
+EndGlobal
