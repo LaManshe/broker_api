@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "borker_api.DAL", "borker_ap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "borker_api.Interfaces", "borker_api.Interfaces\borker_api.Interfaces.csproj", "{AA8C720C-E7CF-4BA5-82BE-2A5E764F740F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "broker_api.Tests", "broker_api.Tests\broker_api.Tests.csproj", "{BD8E5AA3-3B45-433F-AA08-E895F2E6B1C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "borker_apiTests", "borker_apiTests\borker_apiTests.csproj", "{73AE34C4-622A-4F9B-A8CB-A37F6E634479}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{AA8C720C-E7CF-4BA5-82BE-2A5E764F740F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA8C720C-E7CF-4BA5-82BE-2A5E764F740F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA8C720C-E7CF-4BA5-82BE-2A5E764F740F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD8E5AA3-3B45-433F-AA08-E895F2E6B1C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD8E5AA3-3B45-433F-AA08-E895F2E6B1C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD8E5AA3-3B45-433F-AA08-E895F2E6B1C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD8E5AA3-3B45-433F-AA08-E895F2E6B1C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73AE34C4-622A-4F9B-A8CB-A37F6E634479}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73AE34C4-622A-4F9B-A8CB-A37F6E634479}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73AE34C4-622A-4F9B-A8CB-A37F6E634479}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73AE34C4-622A-4F9B-A8CB-A37F6E634479}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

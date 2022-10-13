@@ -45,11 +45,10 @@ namespace borker_api.Data
                 rate.IsApiDataNeed = false;
             }
 
-            if (!rates.Any(x => x.IsApiDataNeed == true)) return rates.OrderBy(x => x.Date).ToList();
+            if (!rates.Any(x => x.IsApiDataNeed == true)) 
+                return rates.OrderBy(x => x.Date).ToList();
 
-            var startApiDate = rates.Find(x => x.IsApiDataNeed).Date;
-
-            List<Rate> ratesFromApi = GetConvertedRatesFromApi(endDate, startApiDate).ExceptBy(ratesFromDb.Select(x => x.Date), x => x.Date).ToList();
+            List<Rate> ratesFromApi = GetRatesFromApiExceptingDbRates(endDate, rates, ratesFromDb);
 
             foreach (var rate in rates)
             {
@@ -69,6 +68,12 @@ namespace borker_api.Data
 
             _rateRepo.AddRange(ratesFromApi);
             return rates.OrderBy(x => x.Date).ToList();
+        }
+
+        private List<Rate> GetRatesFromApiExceptingDbRates(DateTime endDate, List<Rate> rates, List<Rate> ratesFromDb)
+        {
+            return GetConvertedRatesFromApi(endDate, rates.Find(x => x.IsApiDataNeed).Date)
+                .ExceptBy(ratesFromDb.Select(x => x.Date), x => x.Date).ToList();
         }
 
         private List<Rate> GetConvertedRatesFromApi(DateTime endDate, DateTime startApiDate)

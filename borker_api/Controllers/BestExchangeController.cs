@@ -31,76 +31,18 @@ namespace borker_api.Controllers
         [HttpGet]
         public BestExchangeModel Get([FromQuery] QueryModel model)
         {
+            if (model.StartDate == DateTime.MinValue
+                || model.EndDate == DateTime.MinValue)
+            {
+                throw new Exception("Fields Dates is required");
+            }
+
             var rates = _getRates.GetRates(model.StartDate, model.EndDate);
 
-            //List<Rate> rates = new List<Rate>();
-
-            //for (DateTime dt = model.StartDate; dt <= model.EndDate; dt = dt.AddDays(1))
-            //{
-            //    rates.Add(new Rate() { Date = dt });
-            //}
-
-            //var ratesFromDb = _rateRepo.Items.Where(x => x.Date <= model.EndDate && x.Date >= model.StartDate).ToList();
-
-            //foreach (var rate in rates)
-            //{
-            //    var curRate = ratesFromDb.Where(x => x.Date == rate.Date).FirstOrDefault();
-
-            //    if (curRate == null)
-            //    {
-            //        rate.IsApiDataNeed = true;
-            //        continue;
-            //    }
-
-            //    rate.RUB = curRate.RUB;
-            //    rate.EUR = curRate.EUR;
-            //    rate.GBP = curRate.GBP;
-            //    rate.JPY = curRate.JPY;
-            //    rate.IsApiDataNeed = false;
-            //}
-
-            //List<Rate> ratesFromApi;
-            //if (rates.Any(x => x.IsApiDataNeed == true))
-            //{
-            //    var startApiDate = rates.Find(x => x.IsApiDataNeed).Date;
-
-            //    var _ratesFromApi = _ratesRepository.GetRatesWithDates(startApiDate, model.EndDate).ToList();
-
-            //    List<Rate> convertedRatesFromApi = new List<Rate>();
-            //    foreach(var rateFromApi in _ratesFromApi)
-            //    {
-            //        convertedRatesFromApi.Add(_mapper.Map<Rate>(rateFromApi));
-            //    }
-
-            //    ratesFromApi = convertedRatesFromApi.Except(ratesFromDb).ToList();
-
-            //    _rateRepo.AddRange(ratesFromApi);
-
-            //    foreach (var rate in rates)
-            //    {
-            //        var curRate = ratesFromApi.Where(x => x.Date == rate.Date).FirstOrDefault();
-
-            //        if (curRate == null)
-            //        {
-            //            continue;
-            //        }
-
-            //        rate.RUB = curRate.RUB;
-            //        rate.EUR = curRate.EUR;
-            //        rate.GBP = curRate.GBP;
-            //        rate.JPY = curRate.JPY;
-            //        rate.IsApiDataNeed = false;
-            //    }
-            //}
-
-
-
-            //List<Rate> dbRate = new List<Rate>();
-            //foreach (var rate in rates)
-            //{
-            //    dbRate.Add(_mapper.Map<Rate>(rate));
-            //}
-            //_rateRepo.AddRange(dbRate);
+            if(rates == null)
+            {
+                throw new Exception("Recieving rates error");
+            }
 
             //List<ApiInteraction.Models.Rate> rates = new List<ApiInteraction.Models.Rate>()
             //{

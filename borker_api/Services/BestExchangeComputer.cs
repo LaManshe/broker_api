@@ -1,6 +1,4 @@
 ﻿using AutoMapper;
-using borker_api.ApiInteraction.JsonObjects;
-using borker_api.ApiInteraction.Models;
 using borker_api.Models;
 using borker_api.Services.Interfaces;
 using Rate = borker_api.DAL.Entities.Rate;
@@ -18,7 +16,7 @@ namespace borker_api.Services
             _brokerComission = 1;
         }
 
-        public BestExchangeModel GetBestExchange(List<Rate> rates, double moneyUSD)
+        public BestExchangeModel GetBestExchange(List<Rate> rates, double moneyUSD = 100)
         {
             BestExchangeModel bestExchangeModel = new BestExchangeModel();
             bestExchangeModel.Rates = _mapper.Map<Dictionary<DateTime, RateVis>>(rates);
