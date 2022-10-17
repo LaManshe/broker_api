@@ -13,6 +13,10 @@ namespace borker_api.ApiInteraction
     {
         public static IServiceCollection AddApiServices(this IServiceCollection services) => services
             .AddTransient<IRatesRepository, Repository>()
-        ;
+            ;
+
+        public static IServiceCollection MockApiServices(this IServiceCollection services) => services
+            .AddTransient<IRatesRepository, MockRepository>()
+            ;
     }
 }

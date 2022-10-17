@@ -48,7 +48,7 @@ namespace borker_api.Data
             if (!rates.Any(x => x.IsApiDataNeed == true)) 
                 return rates.OrderBy(x => x.Date).ToList();
 
-            List<Rate> ratesFromApi = GetRatesFromApiExceptingDbRates(endDate, rates, ratesFromDb);
+            List<Rate> ratesFromApi = GetRatesFromApiExceptingDbRates(rates, ratesFromDb);
 
             foreach (var rate in rates)
             {
@@ -70,15 +70,20 @@ namespace borker_api.Data
             return rates.OrderBy(x => x.Date).ToList();
         }
 
-        private List<Rate> GetRatesFromApiExceptingDbRates(DateTime endDate, List<Rate> rates, List<Rate> ratesFromDb)
+        private List<Rate> GetRatesFromApiExceptingDbRates(List<Rate> rates, List<Rate> ratesFromDb)
         {
-            return GetConvertedRatesFromApi(endDate, rates.Find(x => x.IsApiDataNeed).Date)
+            var emptyRates = rates.Where(x => x.IsApiDataNeed == true).ToList();
+
+            var minDate = emptyRates.Min(x => x.Date).Date;
+            var maxDate = emptyRates.Max(x => x.Date).Date;
+
+            return GetConvertedRatesFromApi(minDate, maxDate)
                 .ExceptBy(ratesFromDb.Select(x => x.Date), x => x.Date).ToList();
         }
 
-        private List<Rate> GetConvertedRatesFromApi(DateTime endDate, DateTime startApiDate)
+        private List<Rate> GetConvertedRatesFromApi(DateTime startApiDate, DateTime endApiDate)
         {
-            var _ratesFromApi = _ratesRepository.GetRatesWithDates(startApiDate, endDate).ToList();
+            var _ratesFromApi = _ratesRepository.GetRatesWithDates(startApiDate, endApiDate).ToList();
 
             List<Rate> convertedRatesFromApi = new List<Rate>();
             foreach (var rateFromApi in _ratesFromApi)
