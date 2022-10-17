@@ -44,21 +44,6 @@ namespace borker_api.Controllers
                 throw new Exception("Recieving rates error");
             }
 
-            //List<ApiInteraction.Models.Rate> rates = new List<ApiInteraction.Models.Rate>()
-            //{
-            //    new ApiInteraction.Models.Rate() { Date = "2014-12-15", Currency = new ApiInteraction.JsonObjects.Currency() { RUB = 60.17, EUR = 12 } },
-            //    new ApiInteraction.Models.Rate() { Date = "2014-12-16", Currency = new ApiInteraction.JsonObjects.Currency() { RUB = 72.99, EUR = 12 } },
-            //    new ApiInteraction.Models.Rate() { Date = "2014-12-17", Currency = new ApiInteraction.JsonObjects.Currency() { RUB = 66.01, EUR = 12 } },
-            //    new ApiInteraction.Models.Rate() { Date = "2014-12-18", Currency = new ApiInteraction.JsonObjects.Currency() { RUB = 61.44, EUR = 12 } },
-            //    new ApiInteraction.Models.Rate() { Date = "2014-12-19", Currency = new ApiInteraction.JsonObjects.Currency() { RUB = 59.79, EUR = 12 } },
-            //    new ApiInteraction.Models.Rate() { Date = "2014-12-20", Currency = new ApiInteraction.JsonObjects.Currency() { RUB = 59.79, EUR = 12 } },
-            //    new ApiInteraction.Models.Rate() { Date = "2014-12-21", Currency = new ApiInteraction.JsonObjects.Currency() { RUB = 59.79, EUR = 12 } },
-            //    new ApiInteraction.Models.Rate() { Date = "2014-12-22", Currency = new ApiInteraction.JsonObjects.Currency() { RUB = 54.78, EUR = 12 } },
-            //    new ApiInteraction.Models.Rate() { Date = "2014-12-23", Currency = new ApiInteraction.JsonObjects.Currency() { RUB = 54.80, EUR = 12 } }
-            //};
-
-
-
             return _bestExchange.GetBestExchange(rates, model.MoneyUSD);
         }
     }

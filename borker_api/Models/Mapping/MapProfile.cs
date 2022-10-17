@@ -17,10 +17,6 @@ namespace borker_api.Models.Mapping
                 .ForMember(dest => dest.GBP, opt => opt.MapFrom(src => src.Currency.GBP))
                 .ForMember(dest => dest.JPY, opt => opt.MapFrom(src => src.Currency.JPY))
                 ;
-
-            //CreateMap<List<ApiInteraction.Models.Rate>, List<DAL.Entities.Rate>>()
-            //    .ConstructUsing(x => new List<DAL.Entities.Rate>())
-            //    ;
         }
     }
 }
